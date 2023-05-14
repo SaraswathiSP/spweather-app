@@ -2,6 +2,8 @@
 # Project Title
 Weather App
 
+Please Turn on Location to get accurate information.
+
 
 ## Packages Used
 React-clock
