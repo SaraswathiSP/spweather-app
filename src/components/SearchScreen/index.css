@@ -136,16 +136,15 @@ border:none;
 }
 
 .fav-button{
-    background-color: transparent;
-    height:45px;
-  
+    background-color: #e3e8e1;
     text-align: center;
-    color:#A555EC;
-    font-weight: 900;
-    border: solid 5px #ffffff;
+    color:#343137;
+    font-weight: 500;
+    border: solid 3px #A555EC;
     font-size: 20px;;
     margin-bottom: 30px;
     margin-top: 30px;
+    padding:10px;
 
 
 }

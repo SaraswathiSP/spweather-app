@@ -140,7 +140,7 @@ const SearchScreen = () => {
     
           <div className="only-favourites">
     <button type="button" className="fav-button" onClick={onlyFavourites}>
-      Display Favourite Locations
+      Show Favourites
     </button>
   </div>
 
