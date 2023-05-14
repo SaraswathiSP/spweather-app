@@ -60,6 +60,7 @@
     border-radius: 23px;
     transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
     cursor: pointer;
+    margin-left: 20px;
   }
   
   .card:hover {
@@ -230,8 +231,21 @@
     color: rgba(87, 77, 51, 0.66);
   }
 
+  .air-quality{
+    background-image: url("https://res.cloudinary.com/dg0telgxq/image/upload/v1684033118/woman-riding-bike-under-an-umbrella-during-the-rain-fall-rain-autum-outdoor-activities-vector_vdxq6r.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding:20px;
+    height:350px;
+    margin:20px;
+    width:300px;
+    
+  }
+
  
-  @media screen and (max-width:664px){
+  @media screen and (max-width:712px){
     .home-container{
         display: flex;
         flex-direction: column;
@@ -239,14 +253,20 @@
         align-items: center;
     }
     .extra-weather-info{
-        width:87%;
+        width:95%;
        margin-bottom: 30px;
        margin-top: 30px;
         order:2;
+        padding-top:30px;
+    }
+    .single-weather-info{
+width:95%;
     }
     .card {
-      width: 85%;
-    height: 300px;
+      width: 95%;
 
+    }
+    .air-quality{
+      width: 95%;
     }
     }

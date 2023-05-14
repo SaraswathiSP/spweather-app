@@ -7,12 +7,14 @@ const Home = () => {
 
     const [location,setLocation] =useState("")
     const [state,setState] = useState("")
-    const [rain,setRain] = useState("")
+    const [pressure,setPressure] = useState("")
     const [humidity,setHumudity] = useState("")
     const [wind,setWind] = useState("")
     const [temperature,setTemperature] = useState("")
     const [currentDate, setCurrentDate] = useState("");
     const [currentMonth, setCurrentMonth] = useState("May");
+    const [cond,setCond] = useState("")
+    const [airquality,setAirquality] = useState("")
 
   // geting Current Date and Month
     useEffect(() => {
@@ -86,9 +88,13 @@ const Home = () => {
         setLocation(result.location.name)
         setState(result.location.region)
         setHumudity(result.current.humidity)
-        setRain(result.current.precip_in)
+        setPressure(result.current.pressure_mb)
         setTemperature(result.current.temp_c)
         setWind(result.current.wind_kph)
+        setCond(result.current.condition.text)
+        const quality = (result.current.air_quality.pm2_5).toString()
+        const first_digits = quality.slice(0,2)
+        setAirquality(first_digits)
       };
 
 // alert message when user doesn't give access to location
@@ -104,9 +110,11 @@ const Home = () => {
         console.log(state);
         console.log(temperature);
         console.log(humidity);
-        console.log(rain);
+        console.log(pressure);
         console.log(wind);
-      }, [location, state, temperature, humidity, rain, wind]);
+        console.log(cond);
+        console.log(airquality);
+      }, [location, state, temperature, humidity, pressure, wind,cond,airquality]);
     
       useEffect(() => {
         navigator.geolocation.getCurrentPosition(gotLocation, failedToGet);
@@ -127,7 +135,7 @@ const Home = () => {
             </div>
             <div className="single-weather-info">
                 <img src="https://res.cloudinary.com/dg0telgxq/image/upload/v1683970487/rain1_ckgfyb.jpg" alt="" className="weather-image"/>
-                <h2>Rain {rain}%</h2>
+                <h2>Pressure {pressure}mb</h2>
 
             </div>
             <div className="single-weather-info">
@@ -152,17 +160,29 @@ const Home = () => {
 
   <div className="card-header">
     <span>{location} <br/>{state}</span>
-    <span style={{fontWeight:"bold",fontSize:"22px"}} >{getDate.getMonthName(currentMonth)} {currentDate}</span>
+    <span style={{fontWeight:"bold",fontSize:"22px"}} >{getDate.getMonthName(currentMonth)} {currentDate} <span style={{}}>{cond}</span></span>
     <h1 className="clock">
             <Clock format="HH:mm:ss" interval={1000} ticking={true} />
           </h1>
   </div>
+
 
   <span className="temp">{temperature}°</span>
 
   <div className="temp-scale">
     <span>Celcius</span>
   </div>
+     </div>
+     <div className="air-quality">
+      <h1>Air Quality</h1>
+      <h2 style={{marginTop:"-10px"}}>Main Pollution: PM {airquality}</h2>
+      <div style={{display:"flex",justifyContent:"flex-start"}}>
+      <h1>313-<br/> Standard</h1>
+      <h1 style={{backgroundColor:"#FFEA20", fontSize:"15px",padding:'10px',borderRadius:10,height:20}}>AQI</h1>
+      
+
+      </div>
+    
      </div>
     </div>
   );
