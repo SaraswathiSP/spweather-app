@@ -39,6 +39,7 @@
     width:350px;
   }
   /* styling of Input */
+  
   .input {
     font-size: 0.9rem;
     background-color: transparent;
@@ -48,6 +49,16 @@
     padding-block: 0.7em;
     border: none;
   }
+  @media screen and (max-width:460px){
+    .input{
+      width:100px !important;
+    }
+    .form {
+      width:90%;
+    }
+  }
+
+
   /* styling of animated border */
   .form:before {
     content: "";
@@ -136,7 +147,7 @@ border:none;
 }
 
 .fav-button{
-    background-color: #e3e8e1;
+    background-color: #e6f3f6;
     text-align: center;
     color:#343137;
     font-weight: 500;
@@ -145,6 +156,7 @@ border:none;
     margin-bottom: 30px;
     margin-top: 30px;
     padding:10px;
+    border-radius: 20px 0 20px 0;
 
 
 }
