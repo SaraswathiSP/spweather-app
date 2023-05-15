@@ -18,7 +18,7 @@ To deploy this project run
   npm start
 ```
 
-Deployed Netlify Link : "https://spweather-application1.onrender.com/"
+Deployed Netlify Link : "https://weather-application-k7h2.onrender.com/"
 
 ## 🛠 Skills
 Javascript, HTML, CSS, ReactJs, NodeJs, ExpressJs, Bootstrap, 
